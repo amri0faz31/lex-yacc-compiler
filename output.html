@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Registration Form</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<form name="RegistrationForm">
+  <label>FullName: <input type="text" name="fullName" required pattern=[a-zA-Z ]{3,}></label><br>
+  <label>UserEmail: <input type="email" name="userEmail" required pattern=[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}></label><br>
+  <label>BirthYear: <input type="date" name="birthYear" required min=2010 max=2025></label><br>
+  <label>Bio: <textarea name="bio" rows=4 cols=50 value=Tell us about yourself></textarea></label><br>
+  <label>UserPassword: <input type="password" name="userPassword"required pattern=[a-zA-Z0-9!@#$%^&*]{8,}></label><br>
+  <label>LoginRetries: <input type="number" name="loginRetries" min=1 max=5 required></label><br>
+  <label><input type="checkbox" name="twoFactorAuth" checked>TwoFactorAuth</label><br>
+  <label>ProfilePicture: <input type="file" name="profilePicture" required></label><br>
+  <label>Language: <select name="language">
+    <option value="English"">English"</option>
+    <option value="Spanish"">Spanish"</option>
+    <option value="French"">French"</option>
+  </select></label><br>
+  <label>Notifications:</label><br>
+  <input type="radio" name="notifications" value=""Email""> "Email"<br>
+  <input type="radio" name="notifications" value=""SMS""> "SMS"<br>
+  <input type="radio" name="notifications" value=""None""> "None"<br>
+  <script>if(document.forms['RegistrationForm'].loginRetries < 5) { alert("Login retries must be at least 5"); }</script>
+</form>
+</body>
+</html>
